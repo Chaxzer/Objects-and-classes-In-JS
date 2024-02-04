@@ -119,10 +119,14 @@ a.displayHammer();
 class weapons extends Tools{
 
 constructor(talwar){
-super(talwar) // is used if the constructor of the parent class is called and you want to use your own constr
+
+  super(talwar)
+  // is used if the constructor of the parent class is called and you want to use your own constructor 
+  
   this.talwar = talwar;}
 
 jagadamba(){
+  
   let jagadamba = document.createElement("h1");
   jagadamba.innerHTML = `${this.talwar} is her weapon`;
   document.body.appendChild(jagadamba);
@@ -130,11 +134,14 @@ jagadamba(){
 
 
  // //this is case of method overwriting
-  // displayHammer() {
-  //   let h1 = document.createElement("h1");
-  //   h1.innerHTML = `${this.hammer} has a trishul`;
-  //   document.body.appendChild(h1);
-  // }
+
+  
+  displayHammer() {
+    super.displayHammer()//you can  also call a perticular parent class constructor with super.parentObject()
+    let h1 = document.createElement("h1");
+    h1.innerHTML = `${this.hammer} has a trishul`;
+    document.body.appendChild(h1);
+  }
 }
 
 let b = new weapons(" mata rani ");
